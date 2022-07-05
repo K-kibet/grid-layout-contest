@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #333;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.container > div {
+  flex: 20%;
+  cursor: pointer;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: all 0.5s ease-in;
+  position: relative;
+}
+
+
+
+.container > div .image {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+    transition: .5s ease-in;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .container > div:first-of-type{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 0px 10px;
+    background-image: url("https://cdn.shopify.com/s/files/1/0036/0844/4977/files/hat_600x.progressive.png.jpg?v=1559146156");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fill;
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  ul li{
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    
+
+  }
+  
+  .container > div .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease-in;
+  }
+
+  .container > div .cover {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease-in;
+  }
+
+  .container > div .cover .text {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  .container > div .overlay .text {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  
+  .container > div:hover .overlay {
+    height: 100%;
+  }
+  
+  .container > div:hover .image{
+    filter: blur(4px);
+  }
+  
+
+.container > div:hover {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+@media only screen and (max-width: 1200px){
+    .container > div {
+        flex: 30%;
+      }
+
+}
+
+@media only screen and (min-width: 1200px){
+
+}
+
+@media screen and (max-width: 800px) {
+    .container > div {
+      flex: 40%;
+    }
+  }
+@media screen and (max-width: 576px) {
+    .container > div {
+      flex: 50%;
+    }
+  }
+
+
+@media only screen and (max-width: 375px){
+	.container > div {
+        flex: 100%;
+        margin-left:50px;
+      }
+
+}
